@@ -36,4 +36,17 @@ public abstract class Employee implements Employable {
     public String getPosition() {
         return position;
     }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Employee employee = (Employee) obj;
+        return id == employee.id;
+    }
 }
